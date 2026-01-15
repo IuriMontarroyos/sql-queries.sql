@@ -1,0 +1,26 @@
+powerbi-petlove-analytics/
+├── data/
+│   ├── clientes.csv
+│   ├── produtos.csv
+│   └── vendas.csv
+├── sql/
+│   └── queries.sql
+└── README.md
+
+-- Receita total
+SELECT SUM(receita) FROM vendas;
+
+-- Receita por categoria
+SELECT p.categoria, SUM(v.receita)
+FROM vendas v
+JOIN produtos p ON v.product_id = p.product_id
+GROUP BY p.categoria;
+
+-- Receita por estado
+SELECT c.estado, SUM(v.receita)
+FROM vendas v
+JOIN clientes c ON v.customer_id = c.customer_id
+GROUP BY c.estado;
+
+-- Ticket médio
+SELECT SUM(receita) / COUNT(DISTINCT order_id) FROM vendas;
