@@ -1,0 +1,5 @@
+customer_id,cidade,estado,tipo_cliente
+1,Recife,PE,Novo
+2,São Paulo,SP,Recorrente
+3,Belo Horizonte,MG,Recorrente
+4,Curitiba,PR,Novo
